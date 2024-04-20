@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import org.antlr.v4.runtime.misc.NotNull;
 import pl.bikecheck.bikecheck.Utils.Country;
 
@@ -23,6 +24,7 @@ public class Athlete {
     private Long id;
 
     @Column(name = "full_name")
+    @NonNull
     private String fullName;
 
     @Column(name = "biography")

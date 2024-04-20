@@ -52,4 +52,11 @@ public class AthleteServiceImpl implements AthleteService {
 
         return athleteRepository.save(updatedAthlete);
     }
+
+    @Override
+    public void deleteAthleteById(Long id) {
+        Athlete athlete = athleteRepository.findById(id).orElseThrow(() ->
+                new RuntimeException("Athlete with id" + id + " not found."));
+        athleteRepository.delete(athlete);
+    }
 }

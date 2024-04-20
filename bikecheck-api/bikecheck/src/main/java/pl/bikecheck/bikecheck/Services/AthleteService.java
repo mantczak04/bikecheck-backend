@@ -12,4 +12,6 @@ public interface AthleteService {
     Athlete getAthleteById(Long id);
 
     Athlete updateAthleteById(Long id, Athlete athlete);
+
+    void deleteAthleteById(Long id);
 }

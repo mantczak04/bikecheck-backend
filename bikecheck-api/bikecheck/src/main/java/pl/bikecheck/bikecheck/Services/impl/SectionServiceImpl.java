@@ -66,4 +66,11 @@ public class SectionServiceImpl implements SectionService {
         List<Section> sections = sectionRepository.findAll();
         return sections;
     }
+
+    @Override
+    public void deleteSectionById(Long sectionId) {
+        Section section = sectionRepository.findById(sectionId).orElseThrow(() ->
+                new RuntimeException("Section with id" + sectionId + " not found."));
+        sectionRepository.delete(section);
+    }
 }

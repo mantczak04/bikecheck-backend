@@ -39,4 +39,10 @@ public class SectionController {
             @RequestBody Item item){
         return new ResponseEntity<Item>(itemService.createItemBySectionId(sectionId, item), HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{sectionId}")
+    public ResponseEntity<String> deleteSectionById(@PathVariable("sectionId") Long sectionId){
+        sectionService.deleteSectionById(sectionId);
+        return new ResponseEntity<>("Section deleted successfully", HttpStatus.OK);
+    }
 }

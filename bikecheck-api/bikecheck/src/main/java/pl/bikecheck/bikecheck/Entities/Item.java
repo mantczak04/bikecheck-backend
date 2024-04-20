@@ -16,8 +16,15 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @Column(name = "part")
+    private String part;
+
     @Column(name = "name")
     private String name;
+
+    @Column(name = "imageUrl", length = 1024, columnDefinition = "TEXT")
+    private String imageUrl;
 
     @Column(name = "amazonUrl")
     private String amazonUrl;

@@ -62,4 +62,10 @@ public class AthleteController {
         return ResponseEntity.ok(sectionService.getSectionByAthleteId(athleteId));
     }
 
+    @DeleteMapping("/{athleteId}")
+    public ResponseEntity<String> deleteAthleteById(@PathVariable("athleteId") Long athleteId){
+        athleteService.deleteAthleteById(athleteId);
+        return new ResponseEntity<>("Athlete deleted successfully", HttpStatus.OK);
+    }
+
 }

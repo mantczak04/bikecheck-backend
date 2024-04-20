@@ -12,4 +12,6 @@ public interface SectionService {
     Section getSectionById(Long sectionId);
 
     List<Section> getAllSections();
+
+    void deleteSectionById(Long sectionId);
 }
