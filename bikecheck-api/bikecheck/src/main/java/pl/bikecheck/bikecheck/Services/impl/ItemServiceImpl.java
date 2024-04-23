@@ -35,4 +35,15 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> getAllItems() {
         return itemRepository.findAll();
     }
+
+    @Override
+    public Item updateItemById(Long id, Item item) {
+        Item updateItem = itemRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Item with id " + id + " not found."));
+
+        updateItem.setPart(item.getPart());
+        updateItem.setName(item.getName());
+        updateItem.setImageUrl(item.getImageUrl());
+        return itemRepository.save(updateItem);
+    }
 }

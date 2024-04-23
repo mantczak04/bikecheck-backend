@@ -8,4 +8,6 @@ public interface ItemService {
     Item createItemBySectionId(Long sectionId, Item item);
 
     List<Item> getAllItems();
+
+    Item updateItemById(Long id, Item item);
 }
