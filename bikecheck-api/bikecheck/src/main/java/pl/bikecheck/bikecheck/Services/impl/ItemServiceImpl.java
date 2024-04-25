@@ -44,6 +44,7 @@ public class ItemServiceImpl implements ItemService {
         updateItem.setPart(item.getPart());
         updateItem.setName(item.getName());
         updateItem.setImageUrl(item.getImageUrl());
+        updateItem.setAmazonUrl("https://www.amazon.com/s?k="+item.getName().replace(" ", "+"));
         return itemRepository.save(updateItem);
     }
 }
